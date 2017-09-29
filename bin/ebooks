@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # encoding: utf-8
 
-require 'twitter_ebooks'
+require 'bot_twitter_ebooks'
 require 'ostruct'
 require 'fileutils'
 

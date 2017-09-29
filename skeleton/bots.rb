@@ -1,4 +1,4 @@
-require 'twitter_ebooks'
+require 'bot_twitter_ebooks'
 
 # This is an example bot definition with event handlers commented out
 # You can define and instantiate as many bots as you like
