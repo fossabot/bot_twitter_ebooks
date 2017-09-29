@@ -39,8 +39,8 @@ describe Ebooks::Model do
     expect(report2.total_memsize).to be < 4000000
 
     expect(model.tokens[0]).to be_a String
-    expect(model.sentences[0][0]).to be_a Fixnum
-    expect(model.mentions[0][0]).to be_a Fixnum
+    expect(model.sentences[0][0]).to be_a Integer
+    expect(model.mentions[0][0]).to be_a Integer
     expect(model.keywords[0]).to be_a String
 
     puts "elonmusk.model uses #{report2.total_memsize} bytes in memory"
