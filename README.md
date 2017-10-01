@@ -21,7 +21,7 @@ Note that 3.0 is not backwards compatible with 2.x, so upgrade carefully! In par
 
 ## Installation
 
-Requires Ruby 2.1+. Ruby 2.4+ is recommended.
+Requires Ruby 2.4+.
 
 ```bash
 gem install bot_twitter_ebooks
