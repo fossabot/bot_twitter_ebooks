@@ -2,7 +2,7 @@
 require File.expand_path('../lib/bot_twitter_ebooks/version', __FILE__)
 
 Gem::Specification.new do |spec|
-  spec.required_ruby_version = '>= 2.1'
+  spec.required_ruby_version = '>= 2.4'
 
   spec.name          = "bot_twitter_ebooks"
   spec.version       = Ebooks::VERSION
