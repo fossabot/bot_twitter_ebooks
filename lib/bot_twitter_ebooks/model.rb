@@ -127,7 +127,7 @@ module Ebooks
       sentences.map do |s|
         tokens = NLP.tokenize(s).reject do |t|
           # Don't include usernames/urls as tokens
-          t.include?('http')
+          !t.include?('http')
         end
 
         tokens.map { |t| tikify(t) }
