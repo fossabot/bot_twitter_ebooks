@@ -100,7 +100,7 @@ module Ebooks
         #set :long_words_threshold, 15
         #set :vowels, 1                     # => default: 0 = not considered
         #set :consonants, 5                 # => default: 0 = not considered
-        #set :ignore_case, true             # => default: false
+        set :ignore_case, true             # => default: false
         set :word_pattern, /(?<!@)(?<=\s)[\p{Word}']+/           # => default: /\w+/
         #set :stemming, true                # => default: false
       end
