@@ -170,6 +170,7 @@ module Ebooks
       lines.each do |l|
         next if l.start_with?('#') # Remove commented lines
         next if l.include?(': "RT @') || l.include?(': "MT @') # Remove soft retweets
+        next if l.include?('@') || l.include?('#')
 
         if l.include?('@')
           mentions << NLP.normalize(l)
