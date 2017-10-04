@@ -190,7 +190,7 @@ module Ebooks
 
       log "Ranking keywords"
       @keywords = NLP.keywords(text).top(200).map(&:to_s)
-      log "Top keywords: #{@keywords[0]} #{@keywords[1]} #{@keywords[2]}"
+      log "Top keywords: #{@keywords[0]} #{@keywords[1]} #{@keywords[2]} #{@keywords[3]} #{@keywords[4]} #{@keywords[5]} #{@keywords[6]} #{@keywords[7]}"
 
       self
     end
