@@ -91,6 +91,7 @@ module Ebooks
 
       blacklist = Highscore::Blacklist.new
       stopwords.map(&:downcase) do |w|
+        log w
         blacklist << w
       end
 
