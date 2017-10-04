@@ -20,13 +20,13 @@ module Ebooks
       @stopwords ||= File.exists?('stopwords.txt') ? File.read('stopwords.txt').split : []
     end
 
-    def self.stopwords_blacklist
+    def self.blacklist
       blacklist = Highscore::Blacklist.new
       stopwords.each do |w|
         blacklist << w
       end
 
-      @stopwords_blacklist ||= blacklist
+      @blacklist ||= blacklist
     end
 
     # Lazily loads an array of known English nouns
@@ -98,7 +98,7 @@ module Ebooks
       # Preprocess to remove stopwords (highscore's blacklist is v. slow)
       text = NLP.tokenize(text).reject { |t| stopword?(t) }.join(' ')
 
-      text = Highscore::Content.new(text, stopwords_blacklist)
+      text = Highscore::Content.new(text, blacklist)
 
       text.configure do
         #set :multiplier, 2
