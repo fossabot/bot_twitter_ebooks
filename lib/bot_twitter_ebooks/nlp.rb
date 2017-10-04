@@ -7,7 +7,7 @@ module Ebooks
   module NLP
     # We deliberately limit our punctuation handling to stuff we can do consistently
     # It'll just be a part of another token if we don't split it out, and that's fine
-    PUNCTUATION = ".:¿?¡!,;"
+    PUNCTUATION = ".¿?¡!,"
 
     # Lazy-load NLP libraries and resources
     # Some of this stuff is pretty heavy and we don't necessarily need
@@ -87,10 +87,9 @@ module Ebooks
     # @return [Highscore::Keywords]
     def self.keywords(text)
       # Preprocess to remove stopwords (highscore's blacklist is v. slow)
-      text = NLP.tokenize(text)
-      text.delete_if { |t| NLP.stopword?(t) }
-      
-      text = text.join(' ')
+      text = NLP.tokenize(text).reject { |t| stopword?(t) }.join(' ')
+
+      blacklist = Highscore::Blacklist.load_file("stopwords.txt")
 
       text = Highscore::Content.new(text)
 
@@ -155,7 +154,7 @@ module Ebooks
     # @param token [String]
     # @return [Boolean]
     def self.stopword?(token)
-      @stopword_set ||= NLP.stopwords.map(&:downcase).to_set
+      @stopword_set ||= stopwords.map(&:downcase).to_set
       @stopword_set.include?(token.downcase)
     end
 
