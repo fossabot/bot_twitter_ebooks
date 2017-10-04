@@ -91,7 +91,6 @@ module Ebooks
 
       blacklist = Highscore::Blacklist.new
       stopwords.each do |w|
-        log w
         blacklist << w
       end
 
