@@ -91,7 +91,7 @@ module Ebooks
 
       blacklist = Highscore::Blacklist.load %w{stopwords}
 
-      text = Highscore::Content.new(text)
+      text = Highscore::Content.new(text, blacklist)
 
       text.configure do
         #set :multiplier, 2
