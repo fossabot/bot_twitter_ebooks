@@ -89,7 +89,7 @@ module Ebooks
       # Preprocess to remove stopwords (highscore's blacklist is v. slow)
       text = NLP.tokenize(text).reject { |t| stopword?(t) }.join(' ')
 
-      blacklist = Highscore::Blacklist.load(stopwords)
+      blacklist = Highscore::Blacklist.load %w{stopwords}
 
       text = Highscore::Content.new(text)
 
