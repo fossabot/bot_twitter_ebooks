@@ -87,7 +87,10 @@ module Ebooks
     # @return [Highscore::Keywords]
     def self.keywords(text)
       # Preprocess to remove stopwords (highscore's blacklist is v. slow)
-      text = NLP.tokenize(text).reject { |t| NLP.stopword?(t) }.join(' ')
+      text = NLP.tokenize(text)
+      text.delete_if { |t| NLP.stopword?(t) }
+      
+      text = text.join(' ')
 
       text = Highscore::Content.new(text)
 
