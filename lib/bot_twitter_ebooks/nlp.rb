@@ -103,10 +103,7 @@ module Ebooks
         #set :stemming, true                # => default: false
       end
 
-      text = text.keywords
-      text = text.to_a.reject { |t| NLP.stopword?(t) }
-      
-      return text
+      text.keywords
     end
 
     # Builds a proper sentence from a list of tikis
