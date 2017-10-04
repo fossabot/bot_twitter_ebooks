@@ -90,7 +90,7 @@ module Ebooks
       text = NLP.tokenize(text).reject { |t| stopword?(t) }.join(' ')
 
       blacklist = Highscore::Blacklist.new
-      stopwords.each do  do |w|
+      stopwords.each do |w|
         log w
         blacklist << w
       end
