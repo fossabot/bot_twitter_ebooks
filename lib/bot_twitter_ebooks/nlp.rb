@@ -99,6 +99,8 @@ module Ebooks
 
       log stopword?('hvjhvhjhjvhjvjhvhjvhjv')
       log stopword?('http')
+      log stopword?('HTTP')
+      log stopword?('httP')
 
       # Preprocess to remove stopwords (highscore's blacklist is v. slow)
       text = NLP.tokenize(text).reject { |t| listblack.include?(t.downcase) }.join(' ')
