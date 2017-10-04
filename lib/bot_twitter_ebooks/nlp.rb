@@ -7,7 +7,7 @@ module Ebooks
   module NLP
     # We deliberately limit our punctuation handling to stuff we can do consistently
     # It'll just be a part of another token if we don't split it out, and that's fine
-    PUNCTUATION = ".¿?¡!,"
+    PUNCTUATION = ".:¿?¡!,;"
 
     # Lazy-load NLP libraries and resources
     # Some of this stuff is pretty heavy and we don't necessarily need
