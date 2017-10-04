@@ -33,7 +33,6 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'engtagger', '~> 0'
   spec.add_runtime_dependency 'fast-stemmer', '~> 1.0'
   spec.add_runtime_dependency 'highscore', '~> 1.2'
-  spec.add_runtime_dependency 'bloomfilter-rb', '~> 2.1'  
   spec.add_runtime_dependency 'pry', '~> 0'
   spec.add_runtime_dependency 'oauth', '~> 0.5'
   spec.add_runtime_dependency 'mini_magick', '~> 4.8'

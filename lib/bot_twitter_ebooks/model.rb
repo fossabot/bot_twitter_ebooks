@@ -127,7 +127,7 @@ module Ebooks
       sentences.map do |s|
         tokens = NLP.tokenize(s).reject do |t|
           # Don't include usernames/urls as tokens
-          t.include?('@') || t.include?('http')
+          t.start_with?('@') || t.downcase.start_with?('http')
         end
 
         tokens.map { |t| tikify(t) }
@@ -169,7 +169,7 @@ module Ebooks
       mentions = []
       lines.each do |l|
         next if l.start_with?('#') # Remove commented lines
-        next if l.include?('RT') || l.include?('MT') # Remove soft retweets
+        next if l.include?(': "RT @') || l.include?(': "MT @') # Remove soft retweets
 
         if l.include?('@')
           mentions << NLP.normalize(l)
