@@ -95,10 +95,11 @@ module Ebooks
     # @param text [String]
     # @return [Highscore::Keywords]
     def self.keywords(text)
+      listblack = stopwords.map(&:downcase).to_set
       # Preprocess to remove stopwords (highscore's blacklist is v. slow)
-      text = NLP.tokenize(text).reject { |t| stopword?(t) }.join(' ')
+      text = NLP.tokenize(text).reject { |t| listblack.include?(t.downcase) }.join(' ')
 
-      text = Highscore::Content.new(text, blacklist)
+      text = Highscore::Content.new(text)
 
       text.configure do
         #set :multiplier, 2
