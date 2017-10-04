@@ -96,6 +96,8 @@ module Ebooks
     # @return [Highscore::Keywords]
     def self.keywords(text)
       listblack = stopwords.map(&:downcase).to_set
+
+      log listblack.include?('http')
       # Preprocess to remove stopwords (highscore's blacklist is v. slow)
       text = NLP.tokenize(text).reject { |t| listblack.include?(t.downcase) }.join(' ')
 
