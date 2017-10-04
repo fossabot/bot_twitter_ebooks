@@ -96,10 +96,9 @@ module Ebooks
     # @return [Highscore::Keywords]
     def self.keywords(text)
       # Preprocess to remove stopwords (highscore's blacklist is v. slow)
-      
       text = NLP.tokenize(text).reject do |t|
         # Don't include usernames/urls as tokens
-        t.include?('@') || t.include?('http')
+        t.include?('@') || t.downcase.include?('http') || stopword?(t)
       end
 
       text = Highscore::Content.new(text.join(' '))
