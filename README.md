@@ -3,6 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/bot_twitter_ebooks.svg)](http://badge.fury.io/rb/bot_twitter_ebooks)
 [![Build Status](https://travis-ci.org/astrolince/bot_twitter_ebooks.svg)](https://travis-ci.org/astrolince/bot_twitter_ebooks)
 [![Dependency Status](https://gemnasium.com/astrolince/bot_twitter_ebooks.svg)](https://gemnasium.com/astrolince/bot_twitter_ebooks)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fastrolince%2Fbot_twitter_ebooks.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fastrolince%2Fbot_twitter_ebooks?ref=badge_shield)
 
 A framework for building interactive twitterbots which generate tweets based on pseudo-Markov texts models and respond to mentions/DMs/favs/rts. See [ebooks_example](https://github.com/astrolince/ebooks_example) for a fully-fledged bot definition.
 
@@ -166,3 +167,6 @@ bot_twitter_ebooks will drop bystanders from mentions for you and avoid infinite
 bot_twitter_ebooks is [MIT licensed](https://github.com/astrolince/bot_twitter_ebooks/blob/master/LICENSE) and is a fork of [twitter_ebooks](https://github.com/mispy/twitter_ebooks).
 
 Thanks to Jaiden Mispy ([@mispy](https://github.com/mispy)) and all the human beings/bots/star stuff affected by universe entropy that contribute to the project.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fastrolince%2Fbot_twitter_ebooks.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fastrolince%2Fbot_twitter_ebooks?ref=badge_large)
